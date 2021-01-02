@@ -1,0 +1,19 @@
+name: main
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "15 8 * * *"
+
+jobs:
+  build:
+    name: main
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - run: pip install pre-commit-mirror-maker
+      - run: pre-commit-mirror . --language=node --package-name=pyright --types=python --entry='pyright' --id=pyright
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          push_options: "--follow-tags"

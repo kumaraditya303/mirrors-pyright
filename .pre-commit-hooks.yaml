@@ -2,7 +2,8 @@
     name: pyright
     entry: pyright
     language: node
-    'types': [python]
+    pass_filenames: false
+    types: [python]
     args: []
     require_serial: false
     additional_dependencies: ["pyright@1.1.170"]

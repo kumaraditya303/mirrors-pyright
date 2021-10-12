@@ -2,8 +2,7 @@
     name: pyright
     entry: pyright
     language: node
-    'types': [python]
+    types: [python]
     args: []
     require_serial: false
     additional_dependencies: ["pyright@1.1.177"]
-    minimum_pre_commit_version: 0
